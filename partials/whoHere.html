@@ -1,0 +1,31 @@
+<div ui-view>
+    <div class="container">
+        <a ui-sref="signIn">Sign In |</a>
+        <a ui-sref="whoHere">Who's here</a><br><br>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <h5> Here </h5>
+                    <ul ng-repeat="student in filtered = (students | filter: query.signIn=true)">
+                        <p>
+                            {{student.name}}
+                        </p>
+                    </ul>
+                </div>
+
+                <div>
+                    <br>
+                    <h5> Not Here </h5>
+                    <ul ng-repeat="student in filtered = (students | filter: query.signIn=false)">
+                        <p>
+                            {{student.name}}
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
